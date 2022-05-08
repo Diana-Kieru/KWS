@@ -1,5 +1,7 @@
 package org.example.module;
 
+import org.sql2o.Connection;
+
 import java.util.List;
 
 public class EndangeredAnimal extends Wildlife implements DatabaseManagement{

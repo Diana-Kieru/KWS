@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.module.AllSightings;
+import org.example.module.Animal;
+import org.example.module.EndangeredAnimal;
+import org.example.module.Sighting;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 

@@ -1,6 +1,7 @@
 package org.example.module;
 
-import java.sql.Connection;
+import org.sql2o.Connection;
+
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -68,13 +69,13 @@ public class Sighting {
 
     public static List<Sighting> all(){
         String sql = "SELECT * FROM sightings";
-        try(Connection con = DB.sql2o.open()) {
+        try(org.sql2o.Connection con = DB.sql2o.open()) {
             return con.createQuery(sql).executeAndFetch(Sighting.class);
         }
     }
 
     public static Sighting find(int id) {
-        try(Connection con = DB.sql2o.open()) {
+        try(org.sql2o.Connection con = DB.sql2o.open()) {
             String sql = "SELECT * FROM sightings where id=:id";
             Sighting sighting = con.createQuery(sql)
                     .addParameter("id", id)

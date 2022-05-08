@@ -1,6 +1,7 @@
 package org.example.module;
 
 
+import org.sql2o.Connection;
 
 public abstract class Wildlife {
     public String name;
