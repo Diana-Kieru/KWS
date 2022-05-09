@@ -3,7 +3,7 @@ package org.example;
 import org.example.module.AllSightings;
 import org.example.module.Animal;
 import org.example.module.EndangeredAnimal;
-import org.example.module.Sighting;
+import org.example.module.Sightings;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -22,7 +22,7 @@ public class Main {static int getHerokuAssignedPort() {
     return 4567;
 }
     public static void main(String[] args) {
-        port(getHerokuAssignedPort());
+//        port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
         get("/",(request, response) -> {
@@ -47,12 +47,12 @@ public class Main {static int getHerokuAssignedPort() {
             if(type.equals("animal")){
                 Animal animal = new Animal(animalName);
                 animal.save();
-                Sighting newSighting = new Sighting(animal.getId(),location,rangerName);
+                Sightings newSighting = new Sightings(animal.getId(),location,rangerName);
                 newSighting.save();
             } else if(type.equals("endangered")){
                 EndangeredAnimal endangeredAnimal = new EndangeredAnimal(animalName,health,age);
                 endangeredAnimal.save();
-                Sighting anotherSighting = new Sighting(endangeredAnimal.getId(), location, rangerName);
+                Sightings anotherSighting = new Sightings(endangeredAnimal.getId(), location, rangerName);
                 anotherSighting.save();
             }
 

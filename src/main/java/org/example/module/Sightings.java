@@ -5,14 +5,14 @@ import org.sql2o.Connection;
 import java.sql.Timestamp;
 import java.util.List;
 
-public class Sighting {
+public class Sightings {
     private int animalId;
     private int id;
     private String location;
     private String rangerName;
     private Timestamp lastSeen;
 
-    public Sighting (int animalId, String location, String rangerName){
+    public Sightings(int animalId, String location, String rangerName){
         this.animalId = animalId;
         this.location = location;
         this.rangerName = rangerName;
@@ -44,10 +44,10 @@ public class Sighting {
 
     @Override
     public boolean equals(Object otherSighting){
-        if (!(otherSighting instanceof Sighting)) {
+        if (!(otherSighting instanceof Sightings)) {
             return false;
         } else {
-            Sighting newSighting = (Sighting) otherSighting;
+            Sightings newSighting = (Sightings) otherSighting;
             return this.getLocation().equals(newSighting.getLocation()) &&
                     this.getRangerName().equals(newSighting.getRangerName()) &&
                     this.getAnimalId() == newSighting.getAnimalId();
@@ -67,19 +67,19 @@ public class Sighting {
         }
     }
 
-    public static List<Sighting> all(){
+    public static List<Sightings> all(){
         String sql = "SELECT * FROM sightings";
         try(org.sql2o.Connection con = DB.sql2o.open()) {
-            return con.createQuery(sql).executeAndFetch(Sighting.class);
+            return con.createQuery(sql).executeAndFetch(Sightings.class);
         }
     }
 
-    public static Sighting find(int id) {
+    public static Sightings find(int id) {
         try(org.sql2o.Connection con = DB.sql2o.open()) {
             String sql = "SELECT * FROM sightings where id=:id";
-            Sighting sighting = con.createQuery(sql)
+            Sightings sighting = con.createQuery(sql)
                     .addParameter("id", id)
-                    .executeAndFetchFirst(Sighting.class);
+                    .executeAndFetchFirst(Sightings.class);
             return sighting;
         }
     }
