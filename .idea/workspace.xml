@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="c883822d-fc74-46ee-8dd7-049ae210f35c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/module/AllSightings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/module/AllSightings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/module/Wildlife.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/module/Wildlife.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/animals-form.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/animals-form.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/anything.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sightings.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sightings.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,9 +150,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AnimalTest" />
         <item itemvalue="Gradle.SightingTest" />
         <item itemvalue="Gradle.EndangeredAnimalTest" />
+        <item itemvalue="Gradle.AnimalTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

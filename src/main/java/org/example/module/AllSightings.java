@@ -66,7 +66,7 @@ public class AllSightings {
     }
 
     public static List<AllSightings> getAll(){
-        String sql = "SELECT animals.id,name,health,age,location,rangerName,type,lastSeen FROM animals INNER JOIN sightings ON sightings.animalId = animals.id ORDER BY lastSeen";
+        String sql = "SELECT * FROM animals INNER JOIN sightings ON sightings.animalId = animals.id ORDER BY lastSeen";
         try(Connection con = DB.sql2o.open()) {
             return con.createQuery(sql).executeAndFetch(AllSightings.class);
         }
