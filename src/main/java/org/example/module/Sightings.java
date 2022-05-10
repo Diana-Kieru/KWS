@@ -65,14 +65,16 @@ public class Sightings {
 
     public void save(){
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO sightings (animalid, location, rangername, lastseen) VALUES (:animalId, :location, :rangerName, now())";
+            String sql = "INSERT INTO sightings (animalid, location, rangername, lastseen) VALUES (:animalId, :location, :rangerName,now())";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("animalId", this.animalId)
                     .addParameter("location", this.location)
                     .addParameter("rangerName",this.rangerName)
-//                    .throwOnMappingFailure(false)
                     .executeUpdate()
                     .getKey();
+        }
+        catch (Exception exception){
+            System.out.println(exception.getMessage());
         }
     }
 

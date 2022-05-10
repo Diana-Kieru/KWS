@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c883822d-fc74-46ee-8dd7-049ae210f35c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/module/Sightings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/module/Sightings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/animals-form.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/animals-form.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/sighting.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,11 +187,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/module/AnimalTest.java</url>
           <line>9</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/module/Sightings.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
