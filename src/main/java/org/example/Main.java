@@ -54,7 +54,7 @@ public class Main {static int getHerokuAssignedPort() {
                 endangeredAnimal.save();
                 Sightings anotherSighting = new Sightings(endangeredAnimal.getId(), location, rangerName);
                 anotherSighting.save();
-            }
+            };
 
             List<AllSightings> allSightings = AllSightings.getAll();
             List<EndangeredAnimal> animals= EndangeredAnimal.all();

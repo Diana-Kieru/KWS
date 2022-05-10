@@ -12,6 +12,15 @@ public class Sightings {
     private String rangerName;
     private Timestamp lastSeen;
 
+    public Sightings( String location, String rangerName){
+//        this.animalId = animalId;
+        this.location = location;
+        this.rangerName = rangerName;
+
+        if (location.isEmpty() || rangerName.isEmpty()){
+            throw new IllegalArgumentException("Please enter all input fields.");
+        }
+    }
     public Sightings(int animalId, String location, String rangerName){
         this.animalId = animalId;
         this.location = location;
@@ -56,12 +65,12 @@ public class Sightings {
 
     public void save(){
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO sightings (animalId, location, rangerName, lastSeen) VALUES (:animalId, :location, :rangerName, now())";
+            String sql = "INSERT INTO sightings (animalid, location, rangername, lastseen) VALUES (:animalId, :location, :rangerName, now())";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("animalId", this.animalId)
                     .addParameter("location", this.location)
                     .addParameter("rangerName",this.rangerName)
-                    .throwOnMappingFailure(false)
+//                    .throwOnMappingFailure(false)
                     .executeUpdate()
                     .getKey();
         }
