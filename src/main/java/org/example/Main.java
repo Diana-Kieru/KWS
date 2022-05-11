@@ -22,7 +22,7 @@ public class Main {static int getHerokuAssignedPort() {
     return 4567;
 }
     public static void main(String[] args) {
-//        port(getHerokuAssignedPort());
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
         get("/",(request, response) -> {
