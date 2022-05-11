@@ -24,7 +24,7 @@ There are no known bugs. Incase you experience any errors using this website kin
 email: dianakieru1@gmail.com
 
 ## Live link
-[Live Link]()
+[Live Link]( https://deekws.herokuapp.com/ )
 ### License
 [MIT License](./LICENSE)
 

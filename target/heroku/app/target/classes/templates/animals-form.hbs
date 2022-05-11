@@ -1,0 +1,74 @@
+{{#partial "styles"}}
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/form.css">
+{{/partial}}
+
+{{#partial "content"}}
+    <form action="/sightings" method="POST">
+    <div class="container">
+        <div class="title">
+            <h1>Add an Animal</h1>
+
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Animal Name</span>
+            <input name="animalname" type="text" class="form-control" placeholder="Animal" aria-label="animal"
+                   aria-describedby="basic-addon1">
+        </div>
+        <label for="Health" class="form-label" id="form" style="left: -45%; position:relative;">Health</label>
+        <select name="health" class="form-select" aria-label="Default select example">
+            <option>Healthy</option>
+            <option>Ill</option>
+            <option>Okay</option>
+        </select>
+        <label for="exampleDataList" class="form-label" style="left: -45%; position:relative;">Age</label>
+        <select name="age" class="form-select" aria-label="Default select example">
+            <option>NewBorn</option>
+            <option>Young</option>
+            <option>Adult</option>
+        </select>
+        <label for="exampleDataList" class="form-label" style="left: -45%; position:relative;">Animal Type</label>
+        <select name="type" class="form-select" aria-label="Default select example">
+            <option value="animal">Animal</option>
+            <option value="endangered">Endangered Animal</option>
+        </select>
+        <hr>
+        <div class="title">
+            <h1>Add A Sighting</h1>
+
+        </div>
+
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Animals Name</span>
+            <select name="animal" class="form-select" aria-label="Default select example">
+                {{#each animals}}
+                    <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Rangers Name</span>
+            <input name="ranger" type="text" class="form-control" placeholder="Rangers" aria-label="Rangers"
+                   aria-describedby="basic-addon1">
+        </div>
+        <label for="Location" class="form-label" style="left: -45%; position:relative;">Location</label>
+        <select name="location" class="form-select" aria-label="Default select example">
+            <option selected>Zone A</option>
+            <option>Near The River</option>
+            <option>ZNE Quadrant</option>
+        </select>
+
+
+        <div class="col-12" id="">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </div>
+    </form>
+
+
+
+
+
+{{/partial}}
+{{> layout.hbs}}
