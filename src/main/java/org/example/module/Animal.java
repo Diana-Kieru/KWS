@@ -50,13 +50,13 @@ public class Animal extends Wildlife implements DatabaseManagement{
         List<Object> allAnimals = new ArrayList<Object>();
 
         try(Connection con = DB.sql2o.open()) {
-            String sqlFire = "SELECT * FROM animals WHERE id=:id AND type='animal';";
+            String sqlFire = "SELECT * FROM animals WHERE type='animal';";
             List<Animal> animals = con.createQuery(sqlFire)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(Animal.class);
             allAnimals.addAll(animals);
 
-            String sqlWater = "SELECT * FROM animals WHERE id=:id AND type='endangered-animal';";
+            String sqlWater = "SELECT * FROM animals WHERE type='endangered-animal';";
             List<EndangeredAnimal> endangeredAnimals = con.createQuery(sqlWater)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(EndangeredAnimal.class);

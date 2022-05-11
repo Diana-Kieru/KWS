@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
-import static spark.Spark.get;
+//import static spark.Spark.get;
 
 public class Main {static int getHerokuAssignedPort() {
     ProcessBuilder processBuilder = new ProcessBuilder();
@@ -32,12 +32,15 @@ public class Main {static int getHerokuAssignedPort() {
 
         get("/animals-form", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
+            model.put("animals", Animal.getAnimals());
             return new ModelAndView(model, "animals-form.hbs");
         },new HandlebarsTemplateEngine());
 
         post("/sightings", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            String animalName = request.queryParams("animal");
+            int animalid = Integer.parseInt(request.queryParams("animal"));
+            String animalName = request.queryParams("animalname");
+
             String rangerName = request.queryParams("ranger");
             String location = request.queryParams("location");
             String health = request.queryParams("health");
@@ -47,25 +50,28 @@ public class Main {static int getHerokuAssignedPort() {
             if(type.equals("animal")){
                 Animal animal = new Animal(animalName);
                 animal.save();
-                Sightings newSighting = new Sightings(animal.getId(),location,rangerName);
+                Sightings newSighting = new Sightings(animalid,location,rangerName);
                 newSighting.save();
             } else if(type.equals("endangered")){
                 EndangeredAnimal endangeredAnimal = new EndangeredAnimal(animalName,health,age);
                 endangeredAnimal.save();
-                Sightings anotherSighting = new Sightings(endangeredAnimal.getId(), location, rangerName);
+                Sightings anotherSighting = new Sightings(animalid, location, rangerName);
                 anotherSighting.save();
             };
+            response.redirect("/sightings");
+            return null;
 
-            List<AllSightings> allSightings = AllSightings.getAll();
-            List<EndangeredAnimal> animals= EndangeredAnimal.all();
-            model.put("sightings", allSightings);
-            model.put("animals", animals);
 
-            return new ModelAndView(model, "sightings.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/sightings", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
+            List<AllSightings> allSightings = AllSightings.getAll();
+            for (AllSightings animalsightings:allSightings){
+                animalsightings.setName("samuel");
+
+
+            }
             model.put("sightings", AllSightings.getAll());
             model.put("animal", EndangeredAnimal.all());
             return new ModelAndView(model, "sightings.hbs");

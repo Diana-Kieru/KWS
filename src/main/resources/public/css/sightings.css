@@ -1,0 +1,8 @@
+table{
+    background-color:rgba(102,80,16,0.5);
+    overflow: scroll;
+}
+
+td{
+    color:white;
+}

@@ -65,8 +65,37 @@ public class AllSightings {
         return type;
     }
 
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setRangerName(String rangerName) {
+        this.rangerName = rangerName;
+    }
+
+    public void setLastSeen(Timestamp lastSeen) {
+        this.lastSeen = lastSeen;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setHealth(String health) {
+        this.health = health;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public static List<AllSightings> getAll(){
         String sql = "SELECT * FROM animals INNER JOIN sightings ON sightings.animalId = animals.id ORDER BY lastSeen";
+
         try(Connection con = DB.sql2o.open()) {
             return con.createQuery(sql).executeAndFetch(AllSightings.class);
         }
