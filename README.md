@@ -9,9 +9,11 @@ This website makes it easy for rangers to record wildlife sightings. Wildlife mo
 * Run the App (maven))
 * Navigate to localhost:4567 on your browser
 * In PSQL:
-* CREATE DATABASE to_do;
-* CREATE TABLE categories (id serial PRIMARY KEY, name varchar);
-* CREATE TABLE tasks (id serial PRIMARY KEY, description varchar);
+```
+ CREATE DATABASE wildlife_tracker;
+ CREATE TABLE animals (id serial PRIMARY KEY, name varchar, type varchar, health varchar, age varchar);
+ CREATE TABLE sightings (id serial PRIMARY KEY, rangername varchar, lastseen TIMESTAMP, location varchar, animalid int);
+```
 ## Known Bugs
 There are no known bugs. Incase you experience any errors using this website kindly contact me at dianakieru1@gmail.com
 ## Technologies Used
